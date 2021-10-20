@@ -37,29 +37,29 @@ def check_answers(n, ans):
     else:
         return "🗴"
 
-def isprime(p):
+def is_prime(p):
     r = 2
     while r <= sqrt(p):
         if p % r < 1:
             return False
         r = r + 1
-    return p > 1
+    return p >= 2
 
 def Example(n):
     log("Starting factorization:")
     factors = []
 
-    if (not isprime(n)):
+    if (not is_prime(n)):
         t1 = time.time()
         cur_num = n
         needs_factoring = [n]
         while(len(needs_factoring) != 0):
             cur_num = needs_factoring[0]
             fac = lenstra(cur_num)
-            if (isprime(fac)):
+            if (is_prime(fac)):
                 factors.append(fac)
                 needs_factoring = [num // fac for num in needs_factoring]
-                while (len(needs_factoring) != 0 and isprime(needs_factoring[0])):
+                while (len(needs_factoring) != 0 and is_prime(needs_factoring[0])):
                     factors.append(needs_factoring[0])
                     needs_factoring = [num // needs_factoring[0] for num in needs_factoring[1:]]
             else:
