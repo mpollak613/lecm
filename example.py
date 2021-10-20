@@ -1,4 +1,4 @@
-# * Copyright 2020 Michael Pollak.
+# * Copyright 2021 Michael Pollak.
 # *
 # * Use of this source code is governed by an Apache-style
 # * licence that can be found in the LICENSE file.
